@@ -41,7 +41,9 @@ var sliderProps = {
   selectedStyle: View.propTypes.style,
   unselectedStyle: View.propTypes.style,
   markerStyle: View.propTypes.style,
-  pressedMarkerStyle: View.propTypes.style
+  pressedMarkerStyle: View.propTypes.style,
+  markerTwoStyle: View.propTypes.style,
+  pressedMarkerTwoStyle: View.propTypes.style
 };
 
 var Slider = React.createClass({
@@ -255,8 +257,8 @@ var Slider = React.createClass({
               <Marker
                 pressed={this.state.twoPressed}
                 value={this.state.valueOne}
-                markerStyle={this.props.markerStyle}
-                pressedMarkerStyle={this.props.pressedMarkerStyle}
+                markerStyle={[this.props.markerStyle, this.props.markerTwoStyle]}
+                pressedMarkerStyle={[this.props.pressedMarkerStyle, this.props.pressedMarkerTwoStyle]}
                 />
             </View>
           ) }
